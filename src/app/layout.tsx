@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {Layout} from "antd";
+import {Content, Footer, Header} from "antd/lib/layout/layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <Layout>
+          <Header><h1 className={"text-white"}>Arurimmo</h1></Header>
+          <Content className={"p-8 height-full"}>
+            {children}
+          </Content>
+          <Footer>Arurimmo ©2021 Created by Arurimmo</Footer>
+      </Layout>
       </body>
     </html>
   );
